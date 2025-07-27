@@ -13,7 +13,7 @@ def get_db():
     finally:
         db.close()
 
-@router.post("/api/forms/wheel-specifications", response_model=schemas.WheelSpecResponse)
+@router.post("/api/forms/wheel-specifications", response_model=schemas.WheelSpecSingleResponse)
 def submit_wheel_spec(spec: schemas.WheelSpecBase, db: Session = Depends(get_db)):
     result = crud.create_wheel_spec(db, spec)
     return {
@@ -27,7 +27,7 @@ def submit_wheel_spec(spec: schemas.WheelSpecBase, db: Session = Depends(get_db)
         }
     }
 
-@router.get("/api/forms/wheel-specifications", response_model=schemas.WheelSpecResponse)
+@router.get("/api/forms/wheel-specifications", response_model=schemas.WheelSpecListResponse)
 def get_spec(formNumber: str, submittedBy: str, submittedDate: str, db: Session = Depends(get_db)):
     data = crud.get_wheel_specs(db, formNumber, submittedBy, submittedDate)
     return {
