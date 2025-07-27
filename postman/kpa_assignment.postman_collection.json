@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "18373d99-7ecc-4d47-8ff4-dee29ad8b189",
+		"name": "kpa_assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25134899"
+	},
+	"item": [
+		{
+			"name": "post_wheels",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"formNumber\": \"WHEEL-2025-001\",\n  \"submittedBy\": \"user_id_123\",\n  \"submittedDate\": \"2025-07-03\",\n  \"fields\": {\n    \"treadDiameterNew\": \"915 (900-1000)\",\n    \"lastShopIssueSize\": \"837 (800-900)\",\n    \"condemningDia\": \"825 (800-900)\",\n    \"wheelGauge\": \"1600 (+2,-1)\",\n    \"variationSameAxle\": \"0.5\",\n    \"variationSameBogie\": \"5\",\n    \"variationSameCoach\": \"13\",\n    \"wheelProfile\": \"29.4 Flange Thickness\",\n    \"intermediateWWP\": \"20 TO 28\",\n    \"bearingSeatDiameter\": \"130.043 TO 130.068\",\n    \"rollerBearingOuterDia\": \"280 (+0.0/-0.035)\",\n    \"rollerBearingBoreDia\": \"130 (+0.0/-0.025)\",\n    \"rollerBearingWidth\": \"93 (+0/-0.250)\",\n    \"axleBoxHousingBoreDia\": \"280 (+0.030/+0.052)\",\n    \"wheelDiscWidth\": \"127 (+4/-0)\"\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/forms/wheel-specifications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"forms",
+						"wheel-specifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_wheels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/forms/wheel-specifications?formNumber=WHEEL-2025-001&submittedBy=user_id_123&submittedDate=2025-07-03",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"forms",
+						"wheel-specifications"
+					],
+					"query": [
+						{
+							"key": "formNumber",
+							"value": "WHEEL-2025-001"
+						},
+						{
+							"key": "submittedBy",
+							"value": "user_id_123"
+						},
+						{
+							"key": "submittedDate",
+							"value": "2025-07-03"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

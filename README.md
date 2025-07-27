@@ -114,7 +114,7 @@ GET /api/forms/wheel-specifications?formNumber=WHEEL-2025-001&submittedBy=user_i
 
 You can test both APIs using Postman.
 
-- File: `wheel_spec_collection.json`
+- File: `/postman/kpa_assignment.postman_collection.json`
 - Includes:
   - Sample POST request with body
   - Sample GET request with query parameters
